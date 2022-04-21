@@ -1,1 +1,1 @@
-# MIPS32_CPU
+# Single Cycle MIPS Processor
