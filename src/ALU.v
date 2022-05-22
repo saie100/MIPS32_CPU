@@ -33,7 +33,7 @@ module ALU(
      
      multiplier multiply(.multiplier(m1), . multiplicand(m2), .product(m3));
      
-     divider divide(.Q(d1), .M(d2), .Quo(d3), .Rem(rem));
+     //divider divide(.Q(d1), .M(d2), .Quo(d3), .Rem(rem));
         
 
  always @(*)

@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module CPU(input wire clk, input wire rst, input wire [31:0] inputPort, output wire [31:0] outputPort);
+module CPU(input wire clk, input wire rst, input wire [7:0] inputPort, output wire [7:0] outputPort);
 
 //Program Counter signals
 wire [31:0] currentPC;
