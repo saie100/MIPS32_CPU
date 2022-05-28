@@ -8,7 +8,7 @@ module InstructionMemory(input wire [31:0] pc, output wire [31:0] instruction
     
     initial begin
     
-        for(i=7; i<65535; i= i +1) begin
+        for(i=3; i<65535; i= i +1) begin
             /*
             InstructionMem[0] = 32'h214A0005;  //001000 (op)- 01010 (Rs)- 01010 (Rt)- 0000000000000101 //  addi R10, R10, 5    set $t2 == 5
             InstructionMem[1] = 32'h21290001; // increment $t1
@@ -21,9 +21,13 @@ module InstructionMemory(input wire [31:0] pc, output wire [31:0] instruction
             */
             
             /* Initializing instruction memory*/
+            
             InstructionMem[0] = {6'b100011, 5'b00000, 5'b00001, 16'b1111111110}; // lw R1, 1022(R0)
+            
             InstructionMem[1] = {6'b101011, 5'b00000, 5'b00001, 16'b1111111111}; // sw R1, 1023(R0)
-            InstructionMem[2] = {6'b000010, 24'b00000000000000000000000000}; // jump back to PC 0
+            
+            InstructionMem[2] = {6'b000010, 26'b00000000000000000000000000}; // jump back to PC 0
+            
             InstructionMem[i] = 32'hFFFFFFFF; // initialize instruction memory to NOP
         end
     end 
